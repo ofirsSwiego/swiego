@@ -1424,9 +1424,7 @@ html,body{
     width: 100%;
   }
 
-  .form-inline .top-buffer{
-    margin-top: 0;
-  }
+
 
   .header {
     height: 640px;
@@ -1479,24 +1477,24 @@ html,body{
 }
 
 
-@media only screen and (min-width: 1024px) and (max-width: 1400px) {
-  /*button#scroll {*/
-  /*width: 100%;*/
+/*@media only screen and (min-width: 1024px) and (max-width: 1400px) {*/
+  /*!*button#scroll {*!*/
+  /*!*width: 100%;*!*/
+  /*!*}*!*/
+
+  /*!*.form-inline .btn {*!*/
+  /*!*width: 100%;*!*/
+  /*!*}*!*/
+
+  /*!*.form-inline .top-buffer{*!*/
+  /*!*margin-top: 0;*!*/
+  /*!*}*!*/
+
+  /*.header {*/
+    /*height: 1366px;*/
   /*}*/
 
-  /*.form-inline .btn {*/
-  /*width: 100%;*/
+  /*.info{*/
+    /*padding: 50% 10% 0 10%;*/
   /*}*/
-
-  /*.form-inline .top-buffer{*/
-  /*margin-top: 0;*/
-  /*}*/
-
-  .header {
-    height: 1366px;
-  }
-
-  .info{
-    padding: 50% 10% 0 10%;
-  }
-}
+/*}*/
