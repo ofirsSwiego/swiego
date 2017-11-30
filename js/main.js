@@ -253,6 +253,8 @@
 }());
 
 
+
+
 function scrollToElement() {
     $('html, body').animate({
         scrollTop: $(".fh5co-cta").offset().top
