@@ -227,7 +227,7 @@
 		burgerMenu();
 		toggleBtnColor();
 		contentWayPoint();
-		//testimonialCarousel();
+		testimonialCarousel();
         watchScript();
 	});
 
