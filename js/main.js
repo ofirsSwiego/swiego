@@ -320,27 +320,24 @@ function sendContact() {
                 url: 'server/index.php',
                 data: {action: 'sendData', data: JSON.stringify(obj)},
                 dataType: 'json',
-                // beforeSend: function() {
-                //     $scope.loading = true;
-                // },
+                beforeSend: function() {
+
+                },
                 success: function (data) {
                     console.log(111);
                     var url = $rootScope.serverUrl + 'index.php';
                     if (data.result.status == 22) {
+                    	$('.form-inline .btn').addClass('shake');
                         setTimeout(function () {
-                            $scope.$apply(function(){
-                                $scope.loading = false;
-                                $location.path("thanks");
-                            });
-                        }, 1000);
+                            $('.form-inline .btn').hide();
+                        }, 3000);
 
                     }else if (data.result.status == 103){
                         console.log('אירע שגיאה בשליחת הנתונים');
                     }
                 },
                 error: function (e) {
-                    $scope.loading = false;
-                    console.log(e);
+
                 }
             });
 		}

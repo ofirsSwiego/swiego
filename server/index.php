@@ -42,8 +42,9 @@ if($_POST['action'] == 'sendData') {
         $txt .= "</div>";
         //$to = "ofirs1988@gmail.com";
         $subject = "Swiego SITE new lead";
-        $headers = "From: office@swiego.com" . "\r\n" .
-            "CC: office@swiego.com";
+        $headers = "From: office@swiego.com";
+//        $headers = "From: office@swiego.com" . "\r\n" .
+//            "CC: office@swiego.com";
         require 'PHPMailer/PHPMailerAutoload.php';
         $mail = new PHPMailer;
 
@@ -58,7 +59,7 @@ if($_POST['action'] == 'sendData') {
             $mail->Username = 'office@swiego.com';                 // SMTP username
             $mail->Password = 'swiego55555';                           // SMTP password
             $mail->Charset = 'UTF-8';
-            $mail->AddAddress('office@swiego.com', 'Swiego One');
+            //$mail->AddAddress('office@swiego.com', 'Swiego One');
             $mail->AddAddress('ofir@swiego.com', 'Ofir shurdeker');
             //$mail->AddAddress('evgeni@swiego.com', 'evgeni fomenko');
             //$mail->AddAddress('gal@swiego.com', 'evgeni fomenko');
