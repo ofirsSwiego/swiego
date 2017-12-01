@@ -1247,6 +1247,7 @@ button#scroll {
   border: 1px solid black;
   color: #4e4a4a;
   box-shadow: 1px 1px 1px;
+  margin-top: 50px;
 }
 
 .form-inline .btn{
