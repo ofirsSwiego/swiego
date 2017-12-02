@@ -314,7 +314,6 @@ function sendContact() {
 		}
 		if(validateEmail && validateName && validatePhone && !send){
         	send = true;
-        	console.log('send');
             $.ajax({
                 type: 'POST',
                 url: 'server/index.php',
@@ -324,8 +323,8 @@ function sendContact() {
 
                 },
                 success: function (data) {
-                    console.log(111);
-                    var url = $rootScope.serverUrl + 'index.php';
+                    console.log(1111);
+                    console.log(data);
                     if (data.result.status == 22) {
                     	$('.form-inline .btn').addClass('shake');
                         setTimeout(function () {
@@ -342,7 +341,6 @@ function sendContact() {
             });
 		}
     });
-    console.log(obj);
 }
 
 

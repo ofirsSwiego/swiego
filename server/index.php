@@ -9,11 +9,11 @@ mysqli_set_charset( $link, 'utf8');
 
 
 $json = '';
-$json['result'] = false;
+
 
 if($_POST['action'] == 'sendData') {
     $data = json_decode($_POST['data']);
-    var_dump($data);
+
     if (!$data->email)
         return ['error' => 'not email'];
 
@@ -27,8 +27,9 @@ if($_POST['action'] == 'sendData') {
 
 
     if (mysqli_query($link, $sql)) {
-        $ERROR_NUMBER = 22;
-        $json['result']['status'] = $ERROR_NUMBER;
+
+        $json['result'] = $data;
+
         echo json_encode($json);
 
         //echo "Records added successfully.";
@@ -39,6 +40,7 @@ if($_POST['action'] == 'sendData') {
         $txt .= "Name: " . $data->name . "<br>";
         $txt .= "Email:" . $data->email . "<br>";
         $txt .= "Phone:  " . $data->phone . "<br>";
+        $txt .= "Date:  '" .date_format($date, 'd-m-Y H:i:s') . "<br>";
         $txt .= "</div>";
         //$to = "ofirs1988@gmail.com";
         $subject = "Swiego SITE new lead";
