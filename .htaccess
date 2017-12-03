@@ -5,7 +5,7 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
     # Force compression for mangled headers.
     # https://developer.yahoo.com/blogs/ydn/pushing-beyond-gzipping-25601.html
 
-
+       <IfModule>
             SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
             RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
 
@@ -92,4 +92,4 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
     <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2)$">
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
-
+</IfModule>
