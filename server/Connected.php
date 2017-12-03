@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-class ConnectToDb{
-
+class ConnectToDb
+{
     public static function connect()
     {
         $link = mysqli_connect("localhost", "root", "dd429glkk", "swiego");
@@ -14,11 +14,6 @@ class ConnectToDb{
         return $link;
 
     }
-
-
-
-
-
 
 
 }
