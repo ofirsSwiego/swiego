@@ -28,7 +28,7 @@ if($_POST['action'] == 'sendData') {
 
     if (mysqli_query($link, $sql)) {
         $json['result'] = $data;
-        $json['result']['status'] = 103;
+        $json['status'] = 103;
         echo json_encode($json);
 
         //echo "Records added successfully.";
@@ -85,6 +85,9 @@ if($_POST['action'] == 'sendData') {
         } catch (Exception $e) {
             $errors[] = $e->getMessage(); //Boring error messages from anything else!
         }
+    }else{
+        $json['status'] = 22;
+        echo json_encode($json);
     }
 }
 

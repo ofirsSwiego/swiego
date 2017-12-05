@@ -330,17 +330,7 @@ function sendContact(ev) {
                     elem.classList.add(pendingClassName);
                 },
                 success: function (data) {
-                    if (data.result.status == 22) {
-                        window.setTimeout(function () {
-                            elem.classList.remove(pendingClassName);
-                            elem.classList.add(successClassName);
-
-                            // window.setTimeout(function () {
-                            //     return elem.classList.remove(successClassName);
-                            // }, stateDuration);
-                        }, stateDuration);
-
-                    } else if (data.result.status == 103) {
+                    if (data.status == 22) {
                         elem.classList.add(pendingClassName);
 
                         window.setTimeout(function () {
@@ -351,6 +341,17 @@ function sendContact(ev) {
                                 return elem.classList.remove(failClassName);
                             }, stateDuration);
                         }, stateDuration);
+
+                    } else if (data.status == 103) {
+                        window.setTimeout(function () {
+                            elem.classList.remove(pendingClassName);
+                            elem.classList.add(successClassName);
+
+                            // window.setTimeout(function () {
+                            //     return elem.classList.remove(successClassName);
+                            // }, stateDuration);
+                        }, stateDuration);
+
                     }
                 },
                 error: function (e) {
