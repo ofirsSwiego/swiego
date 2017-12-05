@@ -330,6 +330,7 @@ function sendContact(ev) {
                     elem.classList.add(pendingClassName);
                 },
                 success: function (data) {
+                    console.log(data);
                     if (data.status == 22) {
                         elem.classList.add(pendingClassName);
 
