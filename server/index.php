@@ -27,9 +27,8 @@ if($_POST['action'] == 'sendData') {
 
 
     if (mysqli_query($link, $sql)) {
-
         $json['result'] = $data;
-
+        $json['result']['status'] = 103;
         echo json_encode($json);
 
         //echo "Records added successfully.";
@@ -61,10 +60,10 @@ if($_POST['action'] == 'sendData') {
             $mail->Username = 'office@swiego.com';                 // SMTP username
             $mail->Password = 'swiego55555';                           // SMTP password
             $mail->Charset = 'UTF-8';
-            //$mail->AddAddress('office@swiego.com', 'Swiego One');
+            $mail->AddAddress('office@swiego.com', 'Swiego One');
             $mail->AddAddress('ofir@swiego.com', 'Ofir shurdeker');
             //$mail->AddAddress('evgeni@swiego.com', 'evgeni fomenko');
-            //$mail->AddAddress('gal@swiego.com', 'evgeni fomenko');
+            //$mail->AddAddress('gal@swiego.com', 'Gal zabari');
             $mail->setFrom('office@swiego.com', 'Swiego');
             //$mail->addAddress($to);     // Add a recipient
 

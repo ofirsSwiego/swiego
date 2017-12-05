@@ -1662,17 +1662,21 @@ html, body {
 }
 
 @media only screen and (min-width: 400px) and (max-width: 1024px) {
-    /*button#scroll {*/
-    /*width: 100%;*/
-    /*}*/
-    /*.form-inline .btn {*/
-    /*width: 100%;*/
-    /*}*/
-    /*.form-inline .top-buffer{*/
-    /*margin-top: 0;*/
-    /*}*/
+    span.icon-envelope-o, .icon-phone {
+        line-height: 1.7 !important;
+        position: absolute;
+        left: 8px;
+    }
     .header {
         height: 1024px;
+    }
+
+    .loading-btn-wrapper {
+        width: 100% !important;
+    }
+
+    .top-buffer {
+        margin-top: 20px;
     }
 }
 
@@ -1702,7 +1706,6 @@ html, body {
     }
 }
 
-
 button {
     background-color: #17B794;
     border: none;
@@ -1719,36 +1722,8 @@ button {
     -webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
-
-    /*&:before */
-    /*&:hover:before,*/
 }
 
-/*button:hover {*/
-    /*background-color: #78d6b0;*/
-/*}*/
-
-/*button:focus {*/
-    /*outline: none;*/
-/*}*/
-
-/*button:after {*/
-    /*background-color: #59CD9D;*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*left: 0px;*/
-    /*top: 0px;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*border-radius: 5px;*/
-    /*-webkit-animation: button-blip 2200ms forwards infinite cubic-bezier(0.215, 0.61, 0.355, 1);*/
-    /*-moz-animation: button-blip 2200ms forwards infinite cubic-bezier(0.215, 0.61, 0.355, 1);*/
-    /*animation: button-blip 2200ms forwards infinite cubic-bezier(0.215, 0.61, 0.355, 1);*/
-/*}*/
-
-/*button:hover:after {*/
-    /*border-color: transparent;*/
-/*}*/
 
 @-webkit-keyframes button-bounce {
     0% {
@@ -2029,19 +2004,15 @@ i.icon-twitter {
 
 i.icon-linkedin {
     background: #0077B5;
-    padding: 1px;
+    padding: 3px;
     border-radius: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 input:focus {
     box-shadow: none;
     outline: 0;
-}
-input[type="text"] {
-    width: 400px;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
 }
 
 .loading-btn-wrapper {
