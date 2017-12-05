@@ -27,8 +27,8 @@ if($_POST['action'] == 'sendData') {
 
 
     if (mysqli_query($link, $sql)) {
+        $data->status = 103;
         $json['result'] = $data;
-        $json['status'] = 103;
         echo json_encode($json);
 
         //echo "Records added successfully.";
