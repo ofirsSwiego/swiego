@@ -240,18 +240,6 @@ function sendContact(ev) {
     var stateDuration = 1500;
     var elem = ev.target;
 
-
-
-
-
-
-
-
-
-
-
-
-
     var obj = {};
     var validateEmail = false;
     var validateName = false;
@@ -268,9 +256,23 @@ function sendContact(ev) {
                     obj[key] = value;
                     validateEmail = true;
                 } else {
+                    window.setTimeout(function () {
+                        elem.classList.remove(pendingClassName);
+                        elem.classList.add(failClassName);
+                        window.setTimeout(function () {
+                            return elem.classList.remove(failClassName);
+                        }, stateDuration);
+                    }, stateDuration);
                     $('#errorEmail').html('Invalid email');
                 }
             } else {
+                window.setTimeout(function () {
+                    elem.classList.remove(pendingClassName);
+                    elem.classList.add(failClassName);
+                    window.setTimeout(function () {
+                        return elem.classList.remove(failClassName);
+                    }, stateDuration);
+                }, stateDuration);
                 $('#errorEmail').html('This field is required');
             }
         }
@@ -280,6 +282,13 @@ function sendContact(ev) {
                 validateName = true;
                 obj[key] = value;
             } else {
+                window.setTimeout(function () {
+                    elem.classList.remove(pendingClassName);
+                    elem.classList.add(failClassName);
+                    window.setTimeout(function () {
+                        return elem.classList.remove(failClassName);
+                    }, stateDuration);
+                }, stateDuration);
                 $('#errorName').html('This field is required');
             }
         }
@@ -290,9 +299,23 @@ function sendContact(ev) {
                     obj[key] = value;
                     validatePhone = true;
                 } else {
+                    window.setTimeout(function () {
+                        elem.classList.remove(pendingClassName);
+                        elem.classList.add(failClassName);
+                        window.setTimeout(function () {
+                            return elem.classList.remove(failClassName);
+                        }, stateDuration);
+                    }, stateDuration);
                     $('#errorPhone').html('The phone number must be at least 9 digits');
                 }
             } else {
+                window.setTimeout(function () {
+                    elem.classList.remove(pendingClassName);
+                    elem.classList.add(failClassName);
+                    window.setTimeout(function () {
+                        return elem.classList.remove(failClassName);
+                    }, stateDuration);
+                }, stateDuration);
                 $('#errorPhone').html('This field is required');
             }
         }
@@ -318,10 +341,27 @@ function sendContact(ev) {
                         }, stateDuration);
 
                     } else if (data.result.status == 103) {
-                        console.log('אירע שגיאה בשליחת הנתונים');
+                        elem.classList.add(pendingClassName);
+
+                        window.setTimeout(function () {
+                            elem.classList.remove(pendingClassName);
+                            elem.classList.add(failClassName);
+
+                            window.setTimeout(function () {
+                                return elem.classList.remove(failClassName);
+                            }, stateDuration);
+                        }, stateDuration);
                     }
                 },
                 error: function (e) {
+                    window.setTimeout(function () {
+                        elem.classList.remove(pendingClassName);
+                        elem.classList.add(failClassName);
+
+                        window.setTimeout(function () {
+                            return elem.classList.remove(failClassName);
+                        }, stateDuration);
+                    }, stateDuration);
                 }
             });
         }

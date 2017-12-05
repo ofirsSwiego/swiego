@@ -2121,6 +2121,11 @@ button[disabled], html input[disabled] {
 }
 .loading-btn--fail, .loading-btn--fail:hover {
     background: #ff5722;
+    border-radius: 24px;
+    display: inline-block;
+    height: 100%;
+    width: 52px;
+
 }
 .loading-btn--fail:after {
     content: '';
