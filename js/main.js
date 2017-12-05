@@ -1,5 +1,10 @@
 ;(function () {
     'use strict';
+
+
+
+
+
     var isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
@@ -217,7 +222,36 @@ function scrollToElement() {
     }, 2000);
 }
 
-function sendContact() {
+
+
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+function sendContact(ev) {
+    var successBtnElement = document.querySelector('.js_success-animation-trigger');
+    var failBtnElement = document.querySelector('.js_fail-animation-trigger');
+
+    var pendingClassName = 'loading-btn--pending';
+    var successClassName = 'loading-btn--success';
+    var failClassName = 'loading-btn--fail';
+
+    var stateDuration = 1500;
+    var elem = ev.target;
+
+
+
+
+
+
+
+
+
+
+
+
+
     var obj = {};
     var validateEmail = false;
     var validateName = false;
@@ -270,15 +304,18 @@ function sendContact() {
                 data: {action: 'sendData', data: JSON.stringify(obj)},
                 dataType: 'json',
                 beforeSend: function () {
+                    elem.classList.add(pendingClassName);
                 },
                 success: function (data) {
-                    console.log(1111);
-                    console.log(data);
                     if (data.result.status == 22) {
-                        $('.form-inline .btn').addClass('shake');
-                        setTimeout(function () {
-                            $('.form-inline .btn').hide();
-                        }, 3000);
+                        window.setTimeout(function () {
+                            elem.classList.remove(pendingClassName);
+                            elem.classList.add(successClassName);
+
+                            // window.setTimeout(function () {
+                            //     return elem.classList.remove(successClassName);
+                            // }, stateDuration);
+                        }, stateDuration);
 
                     } else if (data.result.status == 103) {
                         console.log('אירע שגיאה בשליחת הנתונים');
@@ -290,9 +327,3 @@ function sendContact() {
         }
     });
 }
-
-function isEmail(email) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    return regex.test(email);
-}
-

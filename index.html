@@ -31,18 +31,18 @@
     <!--<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">-->
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
     <!-- Animate.css -->
-    <link rel="stylesheet" href="https://swiego.com/css/animate.css">
+    <link rel="stylesheet" href="css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="https://swiego.com/css/icomoon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="https://swiego.com/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <!-- Flexslider  -->
-    <link rel="stylesheet" href="https://swiego.com/css/flexslider.css">
+    <link rel="stylesheet" href="css/flexslider.css">
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="https://swiego.com/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://swiego.com/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <!-- Theme style  -->
-    <link rel="stylesheet" href="https://swiego.com/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Modernizr JS -->
 
     <!-- FOR IE9 below -->
@@ -110,8 +110,8 @@
                 <h1><a href="index.html">SWIEGO</a></h1>
                 <nav role="navigation">
                     <ul>
-                        <li>Email: <a href="mailto:office@swiego.com">office@swiego.com</a></li>
-                        <li>Phone: <a href="tel:972-54-215-1212">+972-54-215-1212</a></li>
+                        <span class="icon-envelope-o" ></span> <li  aria-hidden="true">Email: <a href="mailto:office@swiego.com">office@swiego.com</a></li>
+                        <span class="icon-phone" ></span> <li aria-hidden="true">Phone: <a href="tel:972-54-215-1212">+972-54-215-1212</a></li>
                     </ul>
                 </nav>
             </div>
@@ -216,13 +216,13 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <label for="email" class="sr-only">Email</label>
-                                        <div id="errorEmail"></div>
+                                        <div id="errorEmail" class="errorFrom"></div>
                                         <input type="email" class="form-control" id="email" placeholder="Your Email">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <div id="errorName"></div>
+                                        <div id="errorName" class="errorFrom"></div>
                                         <label for="name" class="sr-only">Name</label>
                                         <input type="text" class="form-control" id="name" placeholder="Your Name">
                                     </div>
@@ -230,16 +230,19 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <label for="name" class="sr-only">Phone</label>
-                                        <div id="errorPhone"></div>
+                                        <div id="errorPhone" class="errorFrom"></div>
                                         <input type="text" class="form-control" id="phone" max="11"
                                                placeholder="Your Phone">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-md-offset-4 top-buffer">
-                                    <button type="button" class='btn' onclick="sendContact();"
-                                            class="btn btn-default btn-block"
-                                            id="submit" disabled>Send
-                                    </button>
+                                    <span class="loading-btn-wrapper">
+                                      <button type="button" id='submit' class="loading-btn js_success-animation-trigger" disabled onclick="sendContact(event);">
+                                        <span class="loading-btn__text">
+                                          Send
+                                        </span>
+                                      </button>
+                                    </span>
                                 </div>
                             </form>
                         </div>
@@ -303,12 +306,6 @@
         </div>
     </div>
     <footer id="fh5co-footer" role="contentinfo">
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> f90d9da86813716014e2afe45398d6681e34a0c3
         <div class="container">
             <div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                 <h3>About Us</h3>
@@ -332,64 +329,33 @@
                     <li>API Connection</li>
                 </ul>
             </div>
-<<<<<<< HEAD
 
-            <div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-                <h3>Offices</h3>
-                <p>Israel <br/>
-                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=150x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7Ctel+aviv&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8" alt="Google Map of israel tel aviv"></a>
-                </p>
-                <p>
-                    Odessa <br/>
-                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=150x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7COdessa+Ukraine&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8" alt="Google Map of israel tel aviv"></a>
-                </p>
-                <p>Coming Soon To: Kiev, Dnipro, New York.</p>
-            </div>
-
-=======
-            <div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-                <h3>Offices</h3>
-                <p>Israel <br/>
-                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img
-                            src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=150x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7Ctel+aviv&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8"
-                            alt="Google Map of israel tel aviv"></a>
-                </p>
-                <p>
-                    Odessa <br/>
-                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img
-                            src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=150x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7COdessa+Ukraine&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8"
-                            alt="Google Map of israel tel aviv"></a>
-                </p>
-                <p>Coming Soon To: Kiev, Dnipro, New York.</p>
-            </div>
->>>>>>> f90d9da86813716014e2afe45398d6681e34a0c3
             <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                 <h3>Follow Us</h3>
                 <ul class="fh5co-social">
                     <li><a href="https://twitter.com/Swiego2" target="_blank"><i class="icon-twitter"></i></a></li>
-<<<<<<< HEAD
+
                     <li><a href="https://www.facebook.com/swiego/" target="_blank"><i class="icon-facebook"></i></a></li>
                     <!--<li><a href="#"><i class="icon-google-plus"></i></a></li>-->
                     <li><a href="https://www.instagram.com/swiego5/" target="_blank"><i class="icon-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/18362028/" target="_blank"><i class="icon-linkedin"></i></a></li>
                 </ul>
             </div>
 
-
-
-
-=======
-                    <li><a href="https://www.facebook.com/swiego/" target="_blank"><i class="icon-facebook"></i></a>
-                    </li>
-                    <!--<li><a href="#"><i class="icon-google-plus"></i></a></li>-->
-                    <li><a href="https://www.instagram.com/swiego5/" target="_blank"><i class="icon-instagram"></i></a>
-                    </li>
-                </ul>
+            <div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+                <h3>Offices</h3>
+                <p class="col-md-6">Israel <br/>
+                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=200x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7Ctel+aviv&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8" alt="Google Map of israel tel aviv"></a>
+                </p>
+                <p class="col-md-6">Odessa <br/>
+                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=200x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7COdessa+Ukraine&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8" alt="Google Map of israel tel aviv"></a>
+                </p>
+                <p class="col-md-6">Coming Soon To: Kiev, Dnipro, New York.</p>
             </div>
->>>>>>> f90d9da86813716014e2afe45398d6681e34a0c3
+            </div>
             <div class="col-md-12 fh5co-copyright text-center">
                 <p>&copy; 2018 Swiego. All Rights Reserved. </p>
             </div>
-        </div>
     </footer>
 </div>
 <!-- jQuery -->
