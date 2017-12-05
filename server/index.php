@@ -29,7 +29,7 @@ if($_POST['action'] == 'sendData') {
     if (mysqli_query($link, $sql)) {
         $data->status = 103;
         $json['result'] = $data;
-        echo json_encode($json);
+
 
         //echo "Records added successfully.";
         $sos = '';
@@ -77,7 +77,8 @@ if($_POST['action'] == 'sendData') {
                 echo 'Message could not be sent.';
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-                echo 'Message has been sent';
+                echo json_encode($json);
+                //echo 'Message has been sent';
             }
             $errors[] = "Send mail sucsessfully";
         } catch (phpmailerException $e) {
