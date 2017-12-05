@@ -331,19 +331,6 @@ function sendContact(ev) {
                 },
                 success: function (data) {
                     console.log(data);
-                    if (data.status == 22) {
-                        elem.classList.add(pendingClassName);
-
-                        window.setTimeout(function () {
-                            elem.classList.remove(pendingClassName);
-                            elem.classList.add(failClassName);
-
-                            window.setTimeout(function () {
-                                return elem.classList.remove(failClassName);
-                            }, stateDuration);
-                        }, stateDuration);
-
-                    } else if (data.status == 103) {
                         window.setTimeout(function () {
                             elem.classList.remove(pendingClassName);
                             elem.classList.add(successClassName);
@@ -352,8 +339,6 @@ function sendContact(ev) {
                             //     return elem.classList.remove(successClassName);
                             // }, stateDuration);
                         }, stateDuration);
-
-                    }
                 },
                 error: function (e) {
                     window.setTimeout(function () {
