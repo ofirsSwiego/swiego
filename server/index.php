@@ -73,7 +73,7 @@ if($_POST['action'] == 'sendData') {
                 echo 'Message could not be sent.';
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-                echo json_encode($json);
+                //echo json_encode($json);
                 //echo 'Message has been sent';
             }
             $errors[] = "Send mail sucsessfully";
