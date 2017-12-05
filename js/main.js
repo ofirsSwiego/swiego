@@ -245,6 +245,7 @@ function sendContact(ev) {
     var validateName = false;
     var validatePhone = false;
     var send = false;
+    elem.classList.add(pendingClassName);
     var inputs = $('.form-inline :input').map(function () {
         var key = $(this).context.id;
         var value = $(this).val();
@@ -327,20 +328,27 @@ function sendContact(ev) {
                 data: {action: 'sendData', data: JSON.stringify(obj)},
                 dataType: 'json',
                 beforeSend: function () {
-                    elem.classList.add(pendingClassName);
+
                 },
                 success: function (data) {
-                    console.log(data);
-                        window.setTimeout(function () {
-                            elem.classList.remove(pendingClassName);
-                            elem.classList.add(successClassName);
+                    console.log(111111);
+                    console.log(data.result.status);
+                        if(data.result.status == 103){
+                            window.setTimeout(function () {
+                                elem.classList.remove(pendingClassName);
+                                elem.classList.add(successClassName);
 
-                            // window.setTimeout(function () {
-                            //     return elem.classList.remove(successClassName);
-                            // }, stateDuration);
-                        }, stateDuration);
+                                // window.setTimeout(function () {
+                                //     return elem.classList.remove(successClassName);
+                                // }, stateDuration);
+                            }, stateDuration);
+                        }else {
+                            console.log('error server');
+                        }
+
                 },
                 error: function (e) {
+
                     window.setTimeout(function () {
                         elem.classList.remove(pendingClassName);
                         elem.classList.add(failClassName);

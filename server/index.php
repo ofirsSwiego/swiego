@@ -8,7 +8,7 @@ $link = ConnectToDb::connect();
 mysqli_set_charset( $link, 'utf8');
 
 
-$json = '';
+$json = [];
 
 
 if($_POST['action'] == 'sendData') {
@@ -25,14 +25,10 @@ if($_POST['action'] == 'sendData') {
                 '" . $data->phone . "',
                  '" . date_format($date, 'd-m-Y H:i:s') . "')";
 
-
     if (mysqli_query($link, $sql)) {
         $data->status = 103;
         $json['result'] = $data;
-
-
-        //echo "Records added successfully.";
-        $sos = '';
+        echo json_encode($json);
 
         $txt = '';
         $txt .= '<div>';
@@ -87,7 +83,8 @@ if($_POST['action'] == 'sendData') {
             $errors[] = $e->getMessage(); //Boring error messages from anything else!
         }
     }else{
-        $json['status'] = 22;
+        $data->status = 101;
+        $json['result'] = 'error server';
         echo json_encode($json);
     }
 }
