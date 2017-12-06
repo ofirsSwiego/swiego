@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -101,13 +102,14 @@
     </script>
 </head>
 <body>
+
 <div id="fh5co-page">
     <header id="fh5co-header" role="banner">
         <div class="container">
             <div class="header-inner">
-                <h1><a href="index.html">SWIEGO</a></h1>
+                <h1><a href="">SWIEGO</a></h1>
                 <nav role="navigation">
-                    <ul>
+                    <ul id="menu">
                         <span class="icon-envelope-o" ></span> <li  aria-hidden="true">Email: <a href="mailto:office@swiego.com">office@swiego.com</a></li>
                         <span class="icon-phone" ></span> <li aria-hidden="true">Phone: <a href="tel:972-54-215-1212">+972-54-215-1212</a></li>
                     </ul>
@@ -115,8 +117,10 @@
             </div>
         </div>
     </header>
+    <div id="fullpage">
 
-    <aside id="fh5co-hero" class="js-fullheight">
+    <div id='section0' class="section">
+    <aside id="fh5co-hero" class="js-fullheight" >
         <div class="flexslider js-fullheight">
             <div class="header">
                 <div class="info">
@@ -128,6 +132,8 @@
             </div>
         </div>
     </aside>
+    </div>
+    <div id='section1' class="section">
     <div id="fh5co-services-section">
         <div class="container">
             <div class="row">
@@ -202,6 +208,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div id='section3' class="section" >
     <div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
         <div class="overlay"></div>
         <div class="container">
@@ -249,6 +257,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div id='section4' class="section" >
     <div id="fh5co-testimony-section">
         <div class="container">
             <div class="row">
@@ -258,7 +268,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-offset-0 to-animate">
-                    <div class="wrap-testimony animate-box">
+                    <div class="wrap-testimony rollIn">
                         <div class="owl-carousel-fullwidth">
                             <div class="item">
                                 <div class="testimony-slide active text-center">
@@ -303,6 +313,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div id='section5' class="section">
     <footer id="fh5co-footer" role="contentinfo">
         <div class="container">
             <div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
@@ -354,23 +366,30 @@
                 <p>&copy; 2018 Swiego. All Rights Reserved. </p>
             </div>
     </footer>
+    </div>
+</div>
 </div>
 <!-- jQuery -->
-<script src="js/modernizr-2.6.2.min.js"></script>
+
 
 <script src="js/jquery.min.js"></script>
 <!-- jQuery Easing -->
 <script src="js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
+<script src="js/modernizr-2.6.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Waypoints -->
+<script src="js/jquery.fullPage.js"></script>
 <script src="js/jquery.waypoints.min.js"></script>
+
 <!-- Owl Carousel -->
 <script src="js/owl.carousel.min.js"></script>
 <!-- Flexslider -->
 <script src="js/jquery.flexslider-min.js"></script>
+
 <!-- MAIN JS -->
 <script src="js/main.js"></script>
+
 </body>
 </html>
 
