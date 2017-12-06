@@ -1,11 +1,6 @@
 ;(function () {
     'use strict';
-
-
-
-
     var isMobile = false;
-
     isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
@@ -34,8 +29,6 @@
     if(!isMobile.any()){
         $('#fullpage').fullpage({
 
-            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-            menu: '#menu',
             lockAnchors: false,
             scrollingSpeed: 1250,
             css3: true,
@@ -360,15 +353,10 @@ function sendContact(ev) {
 
                 },
                 success: function (data) {
-                    console.log(data.result.status);
                         if(data.result.status == 103){
                             window.setTimeout(function () {
                                 elem.classList.remove(pendingClassName);
                                 elem.classList.add(successClassName);
-
-                                // window.setTimeout(function () {
-                                //     return elem.classList.remove(successClassName);
-                                // }, stateDuration);
                             }, stateDuration);
                         }else {
                             console.log('error server');

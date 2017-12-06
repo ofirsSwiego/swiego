@@ -2187,7 +2187,6 @@
             return 'right';
         }
 
-
         function addTableClass(element){
             //In case we are styling for the 2nd time as in with reponsiveSlides
             if(!element.hasClass(TABLE)){
