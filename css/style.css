@@ -2321,7 +2321,7 @@ button[disabled], html input[disabled] {
 
 .header {
     position: relative;
-    min-height: 100vh;
+    min-height: 92vh;
     background-image: linear-gradient(to top, black 0%, transparent 90%), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.05) 400px);
     display: flex;
     justify-content: center;
