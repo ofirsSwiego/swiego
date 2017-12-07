@@ -1483,7 +1483,7 @@ html, body {
     justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
-    height: 92%;
+    height: 100vh;
     min-width: 300px;
     color: #eee;
 }
@@ -1663,6 +1663,14 @@ html, body {
     }
 }
 
+
+@media only screen and (min-width: 375px) and (max-width: 700px) {
+    .header {
+        height: 90vh;
+    }
+}
+
+
 @media only screen and (min-width: 400px) and (max-width: 1024px) {
     span.icon-envelope-o, .icon-phone {
         line-height: 1.7 !important;
@@ -1670,7 +1678,7 @@ html, body {
         left: 8px;
     }
     .header {
-        height: 100vh;
+        height: 90vh;
     }
 
     .loading-btn-wrapper {
@@ -2229,4 +2237,82 @@ button[disabled], html input[disabled] {
         opacity: 0;
         transform: translate(-10px, -10px);
     }
+}
+
+
+
+.content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    z-index: -2;
+}
+.content:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-size: 100% 100%;
+    transition: all ease-out 1s;
+    opacity: 0;
+    z-index: -1;
+}
+.content.is-change:after {
+    width: inherit;
+    height: inherit;
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+.title--main {
+    overflow: hidden;
+}
+.title--main span {
+    display: block;
+    color: #333333;
+    font-family: "vdl-linegr";
+    font-size: 60px;
+    text-align: center;
+    transform: translateY(1em);
+    transition: all ease-out 1s;
+}
+.title--main.is-view span {
+    transform: translateY(0em);
+}
+
+.title--border {
+    display: block;
+    content: '';
+    width: 0;
+    height: 2px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    transition: all ease-out 2s;
+}
+.title--border.is-view {
+    width: 100%;
+    background-color: #333333;
+}
+
+.title--sub {
+    overflow: hidden;
+}
+.title--sub span {
+    display: block;
+    color: #333333;
+    font-family: "vdl-linegr";
+    font-size: 18px;
+    text-align: center;
+    transform: translateY(-1em);
+    transition: all ease-out 1s;
+}
+.title--sub.is-view span {
+    transform: translateY(0em);
 }

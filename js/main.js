@@ -1,4 +1,7 @@
 ;(function () {
+
+
+
     'use strict';
     var isMobile = false;
     isMobile = {
@@ -28,7 +31,6 @@
 
     if(!isMobile.any()){
         $('#fullpage').fullpage({
-
             lockAnchors: false,
             scrollingSpeed: 1250,
             css3: true,
@@ -46,18 +48,14 @@
             offsetSections: false,
             resetSliders: false,
             fadingEffect: false,
-            normalScrollElements: '#element1, .element2',
             scrollOverflow: false,
             scrollOverflowReset: false,
             scrollOverflowOptions: null,
             touchSensitivity: 15,
             normalScrollElementTouchThreshold: 5,
             bigSectionsDestination: null,
-
-
             navigation: false,
             navigationPosition: 'right',
-            navigationTooltips: ['firstSlide', 'secondSlide'],
             slidesNavPosition: 'bottom',
             afterLoad: function(anchorLink, index){
                 contentWayPoint();
@@ -65,9 +63,6 @@
         });
     }else {
         $('#fullpage').fullpage({
-
-            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-
             autoScrolling: false,
         });
     }
@@ -411,3 +406,4 @@ function contentWayPoint() {
 
     }, {offset: '85%'});
 };
+
