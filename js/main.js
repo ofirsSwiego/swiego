@@ -233,10 +233,14 @@
 }());
 
 
-function scrollToElement() {
-    $('html, body').animate({
-        scrollTop: $(".fh5co-cta").offset().top
-    }, 2000);
+function scrollToElement(type) {
+    if(type == 1){
+        $.fn.fullpage.moveTo(3);
+    }
+
+    if(type == 2){
+        $.fn.fullpage.moveTo(2);
+    }
 }
 
 
