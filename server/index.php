@@ -8,7 +8,7 @@ $link = ConnectToDb::connect();
 mysqli_set_charset( $link, 'utf8');
 
 
-$json = '';
+$json = [];
 
 
 if($_POST['action'] == 'sendData') {
@@ -25,15 +25,10 @@ if($_POST['action'] == 'sendData') {
                 '" . $data->phone . "',
                  '" . date_format($date, 'd-m-Y H:i:s') . "')";
 
-
     if (mysqli_query($link, $sql)) {
-
+        $data->status = 103;
         $json['result'] = $data;
-
         echo json_encode($json);
-
-        //echo "Records added successfully.";
-        $sos = '';
 
         $txt = '';
         $txt .= '<div>';
@@ -51,7 +46,7 @@ if($_POST['action'] == 'sendData') {
         $mail = new PHPMailer;
 
         try {
-            $mail->SMTPDebug = 2;                              // Enable verbose debug output
+            //$mail->SMTPDebug = 2;                              // Enable verbose debug output
 
             $mail->isSMTP();                                    // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
@@ -61,10 +56,10 @@ if($_POST['action'] == 'sendData') {
             $mail->Username = 'office@swiego.com';                 // SMTP username
             $mail->Password = 'swiego55555';                           // SMTP password
             $mail->Charset = 'UTF-8';
-            //$mail->AddAddress('office@swiego.com', 'Swiego One');
+            $mail->AddAddress('office@swiego.com', 'Swiego One');
             $mail->AddAddress('ofir@swiego.com', 'Ofir shurdeker');
             //$mail->AddAddress('evgeni@swiego.com', 'evgeni fomenko');
-            //$mail->AddAddress('gal@swiego.com', 'evgeni fomenko');
+            //$mail->AddAddress('gal@swiego.com', 'Gal zabari');
             $mail->setFrom('office@swiego.com', 'Swiego');
             //$mail->addAddress($to);     // Add a recipient
 
@@ -78,7 +73,8 @@ if($_POST['action'] == 'sendData') {
                 echo 'Message could not be sent.';
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-                echo 'Message has been sent';
+                //echo json_encode($json);
+                //echo 'Message has been sent';
             }
             $errors[] = "Send mail sucsessfully";
         } catch (phpmailerException $e) {
@@ -86,6 +82,10 @@ if($_POST['action'] == 'sendData') {
         } catch (Exception $e) {
             $errors[] = $e->getMessage(); //Boring error messages from anything else!
         }
+    }else{
+        $data->status = 101;
+        $json['result'] = 'error server';
+        echo json_encode($json);
     }
 }
 

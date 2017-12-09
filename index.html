@@ -16,6 +16,7 @@
     <meta name="keywords"
           content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive"/>
     <meta name="author" content="FreeHTML5.co"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content=""/>
     <meta property="og:image" content=""/>
@@ -28,24 +29,22 @@
     <meta name="twitter:card" content=""/>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico">
-
     <!--<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">-->
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
     <!-- Animate.css -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" type="text/css" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <!-- Flexslider  -->
-    <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/flexslider.css">
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <!-- Theme style  -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -85,7 +84,6 @@
         function gtag() {
             dataLayer.push(arguments);
         }
-
         gtag('js', new Date());
         gtag('config', 'UA-109341697-1');
     </script>
@@ -105,33 +103,64 @@
     </script>
 </head>
 <body>
+
 <div id="fh5co-page">
     <header id="fh5co-header" role="banner">
         <div class="container">
             <div class="header-inner">
-                <h1><a href="index.html">SWIEGO</a></h1>
+                <h1><a href="">SWIEGO</a></h1>
                 <nav role="navigation">
-                    <ul>
-                        <li>Email: <a href="mailto:office@swiego.com">office@swiego.com</a></li>
-                        <li>Phone: <a href="tel:972-54-215-1212">+972-54-215-1212</a></li>
+                    <ul id="menu">
+                        <span class="icon-envelope-o" ></span> <li  aria-hidden="true">Email: <a href="mailto:office@swiego.com">office@swiego.com</a></li>
+                        <span class="icon-phone" ></span> <li aria-hidden="true">Phone: <a href="tel:972-54-215-1212">+972-54-215-1212</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+    <div id="fullpage">
 
-    <aside id="fh5co-hero" class="js-fullheight">
+    <div id='section0' class="section">
+        <aside id="fh5co-hero" class="js-fullheight" >
         <div class="flexslider js-fullheight">
             <div class="header">
-                <div class="info">
+                <div class="info" >
+                    <div class="arrow" onclick="scrollToElement(2);"></div>
                     <h1>Software OutSourcing & Dedicated Team</h1>
-                    <button type="button" onclick="scrollToElement();" class="btn btn-primary btn-block btn-header"
+                    <button type="button" onclick="scrollToElement(1);" class="btn btn-primary btn-block btn-header"
                             id="scroll">CONTACT US
                     </button>
                 </div>
             </div>
+
         </div>
-    </aside>
+        </aside>
+        <!--<div class="header">-->
+            <!--<div class="info" onclick="scrollToElement(2);">-->
+            <!--<div class="arrow"></div>-->
+            <!--<h1>Software OutSourcing & Dedicated Team</h1>-->
+            <!--<button type="button" onclick="scrollToElement(1);" class="btn btn-primary btn-block btn-header"-->
+            <!--id="scroll">CONTACT US-->
+            <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--<aside id="fh5co-hero" class="js-fullheight" >-->
+        <!--<div class="flexslider js-fullheight">-->
+            <!--<div class="header">-->
+                <!--<div class="info">-->
+                    <!--<div class="arrow"></div>-->
+                    <!--<h1>Software OutSourcing & Dedicated Team</h1>-->
+                    <!--<button type="button" onclick="scrollToElement();" class="btn btn-primary btn-block btn-header"-->
+                            <!--id="scroll">CONTACT US-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</aside>-->
+    </div>
+    <div id='section1' class="section">
     <div id="fh5co-services-section">
         <div class="container">
             <div class="row">
@@ -206,6 +235,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div id='section3' class="section" >
     <div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
         <div class="overlay"></div>
         <div class="container">
@@ -218,13 +249,13 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <label for="email" class="sr-only">Email</label>
-                                        <div id="errorEmail"></div>
+                                        <div id="errorEmail" class="errorFrom"></div>
                                         <input type="email" class="form-control" id="email" placeholder="Your Email">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <div id="errorName"></div>
+                                        <div id="errorName" class="errorFrom"></div>
                                         <label for="name" class="sr-only">Name</label>
                                         <input type="text" class="form-control" id="name" placeholder="Your Name">
                                     </div>
@@ -232,16 +263,19 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <label for="name" class="sr-only">Phone</label>
-                                        <div id="errorPhone"></div>
+                                        <div id="errorPhone" class="errorFrom"></div>
                                         <input type="text" class="form-control" id="phone" max="11"
                                                placeholder="Your Phone">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-md-offset-4 top-buffer">
-                                    <button type="button" class='btn' onclick="sendContact();"
-                                            class="btn btn-default btn-block"
-                                            id="submit" disabled>Send
-                                    </button>
+                                    <span class="loading-btn-wrapper">
+                                      <button type="button" id='submit' class="loading-btn js_success-animation-trigger" disabled onclick="sendContact(event);">
+                                        <span class="loading-btn__text">
+                                          Send
+                                        </span>
+                                      </button>
+                                    </span>
                                 </div>
                             </form>
                         </div>
@@ -250,6 +284,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div id='section4' class="section" >
     <div id="fh5co-testimony-section">
         <div class="container">
             <div class="row">
@@ -259,12 +295,12 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-offset-0 to-animate">
-                    <div class="wrap-testimony animate-box">
+                    <div class="wrap-testimony rollIn">
                         <div class="owl-carousel-fullwidth">
                             <div class="item">
                                 <div class="testimony-slide active text-center">
                                     <figure>
-                                        <img src="images/pp-min.jpg" alt="user">
+                                        <img src="images/pp.jpg" alt="user">
                                     </figure>
                                     <blockquote>
                                         <p>"Swiego service was amazing, I outsourced programmers from Ukraine with
@@ -277,7 +313,7 @@
                             <div class="item">
                                 <div class="testimony-slide active text-center">
                                     <figure>
-                                        <img src="images/pp2-min.jpg" alt="user">
+                                        <img src="images/pp2.jpg" alt="user">
                                     </figure>
                                     <blockquote>
                                         <p>"We built an mobile app with Swiego, when we came to Swiego with the
@@ -290,7 +326,7 @@
                             <div class="item">
                                 <div class="testimony-slide active text-center">
                                     <figure>
-                                        <img src="images/pp3-min.jpg" alt="user">
+                                        <img src="images/pp3.jpg" alt="user">
                                     </figure>
                                     <blockquote>
                                         <p>"An amazing team helped us express what we wanted in the best way."</p>
@@ -304,6 +340,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div id='section5' class="section">
     <footer id="fh5co-footer" role="contentinfo">
         <div class="container">
             <div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
@@ -328,55 +366,57 @@
                     <li>API Connection</li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-                <h3>Offices</h3>
-                <p>Israel <br/>
-                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img
-                            src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=150x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7Ctel+aviv&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8"
-                            alt="Google Map of israel tel aviv"></a>
-                </p>
-                <p>
-                    Ukraine <br/>
-                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img
-                            src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=150x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7COdessa+Ukraine&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8"
-                            alt="Google Map of israel tel aviv"></a>
-                </p>
-                <p>Coming Soon To: Kiev, Dnipro, New York.</p>
-            </div>
             <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                 <h3>Follow Us</h3>
                 <ul class="fh5co-social">
                     <li><a href="https://twitter.com/Swiego2" target="_blank"><i class="icon-twitter"></i></a></li>
-                    <li><a href="https://www.facebook.com/swiego/" target="_blank"><i class="icon-facebook"></i></a>
-                    </li>
+
+                    <li><a href="https://www.facebook.com/swiego/" target="_blank"><i class="icon-facebook"></i></a></li>
                     <!--<li><a href="#"><i class="icon-google-plus"></i></a></li>-->
-                    <li><a href="https://www.instagram.com/swiego5/" target="_blank"><i class="icon-instagram"></i></a>
-                    </li>
+                    <li><a href="https://www.instagram.com/swiego5/" target="_blank"><i class="icon-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/18362028/" target="_blank"><i class="icon-linkedin"></i></a></li>
                 </ul>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+                <h3>Offices</h3>
+                <p class="col-md-6">Israel <br/>
+                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=200x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7Ctel+aviv&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8" alt="Google Map of israel tel aviv"></a>
+                </p>
+                <p class="col-md-6">Ukraine <br/>
+                    <a href="https://www.google.com/maps/place/israel+tel+aviv/"><img src="https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=200x100&maptype=terrain&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0x61fc03%7Clabel:%7COdessa+Ukraine&key=AIzaSyARrAHOVdmc2lNZF45lNB89qMKIFZBwLe8" alt="Google Map of israel tel aviv"></a>
+                </p>
+                <p class="col-md-6">Coming Soon To: Kiev, Dnipro, New York.</p>
+            </div>
             </div>
             <div class="col-md-12 fh5co-copyright text-center">
                 <p>&copy; 2018 Swiego. All Rights Reserved. </p>
             </div>
-        </div>
     </footer>
+    </div>
 </div>
-
+</div>
 <!-- jQuery -->
-<script src="js/modernizr-2.6.2.min.js"></script>
+
 
 <script src="js/jquery.min.js"></script>
 <!-- jQuery Easing -->
 <script src="js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
+<script src="js/modernizr-2.6.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Waypoints -->
+<script src="js/jquery.fullPage.js"></script>
 <script src="js/jquery.waypoints.min.js"></script>
+
 <!-- Owl Carousel -->
 <script src="js/owl.carousel.min.js"></script>
 <!-- Flexslider -->
 <script src="js/jquery.flexslider-min.js"></script>
+<script src="js/canvas.js"></script>
 <!-- MAIN JS -->
 <script src="js/main.js"></script>
+
 </body>
 </html>
 
