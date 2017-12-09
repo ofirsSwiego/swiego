@@ -1507,7 +1507,7 @@ html, body {
     justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
-    height: 90vh;
+    height: 100vh;
     min-width: 300px;
     color: #eee;
 }
@@ -1698,7 +1698,7 @@ html, body {
 
 @media only screen and (min-width: 400px) and (max-width: 1024px) {
     span.icon-envelope-o, .icon-phone {
-        line-height: 1.8 !important;
+        line-height: 1.7 !important;
         position: absolute;
         left: 8px;
     }
