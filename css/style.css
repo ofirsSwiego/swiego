@@ -581,7 +581,6 @@ h1, h2, h3, h4, h5, h6, figure {
     border: none !important;
     color: #fff;
     font-size: 16px;
-    text-transform: uppercase;
     font-weight: 400;
     text-align: center;
     margin: 0 auto;
@@ -1072,7 +1071,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-footer h3 {
-    text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 16px;
     font-weight: bold;
@@ -1261,7 +1259,6 @@ h1, h2, h3, h4, h5, h6, figure {
     height: 2px;
     color: #fff;
     font: bold 14px/.4 Helvetica;
-    text-transform: uppercase;
     text-indent: -55px;
     background: #000;
     transition: all .2s ease-out;
@@ -1407,7 +1404,6 @@ h1, h2, h3, h4, h5, h6, figure {
     padding: 0;
     font-size: 13px;
     letter-spacing: 2px;
-    text-transform: uppercase;
     font-weight: 700;
     color: #888f94;
 }
@@ -1438,7 +1434,6 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-pricing-section .price small {
     font-size: 13px;
     display: block;
-    text-transform: uppercase;
     color: #888f94;
 }
 
@@ -1456,7 +1451,6 @@ h1, h2, h3, h4, h5, h6, figure {
     background: #17B794;
     color: #fff;
     font-size: 16px;
-    text-transform: uppercase;
     font-weight: 400;
     padding-left: 50px;
     padding-right: 50px;
@@ -1482,7 +1476,6 @@ button#scroll {
 
     color: #fff;
     font-size: 16px;
-    text-transform: uppercase;
     font-weight: 400;
     text-align: center;
     margin: 0 auto;
@@ -2355,9 +2348,8 @@ button[disabled], html input[disabled] {
 .header h1 {
     position: relative;
     z-index: 2;
-    font-family: "Dosis",sans-serif;
+    font-family: "Josefin Sans",sans-serif;
     color: white;
-    text-transform: uppercase;
     font-size: 5rem;
 }
 
