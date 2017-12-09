@@ -1,0 +1,26 @@
+.rtl{
+  direction: rtl;
+}
+
+.rtl_text{
+  text-align: right;
+}
+
+.icon-laptop,.icon-magic,.icon-server,.icon-tablet,.icon-line-chart{
+  right:0;
+  left: auto !important;
+}
+
+#fh5co-services-section .services .desc h3{
+    margin-right: 50px;
+    padding-top: 7px;
+}
+
+.icon-envelope-o{
+  margin-right: 20px;
+  margin-left: 1px;
+  margin-top: 10px;
+}
+.icon-phone{
+  margin-left:-10px;
+}

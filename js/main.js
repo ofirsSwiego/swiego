@@ -233,10 +233,14 @@
 }());
 
 
-function scrollToElement() {
-    $('html, body').animate({
-        scrollTop: $(".fh5co-cta").offset().top
-    }, 2000);
+function scrollToElement(type) {
+    if(type == 1){
+        $.fn.fullpage.moveTo(3);
+    }
+
+    if(type == 2){
+        $.fn.fullpage.moveTo(2);
+    }
 }
 
 
@@ -348,14 +352,14 @@ function sendContact(ev) {
 
                 },
                 success: function (data) {
-                        if(data.result.status == 103){
-                            window.setTimeout(function () {
-                                elem.classList.remove(pendingClassName);
-                                elem.classList.add(successClassName);
-                            }, stateDuration);
-                        }else {
-                            console.log('error server');
-                        }
+                    if(data.result.status == 103){
+                        window.setTimeout(function () {
+                            elem.classList.remove(pendingClassName);
+                            elem.classList.add(successClassName);
+                        }, stateDuration);
+                    }else {
+                        console.log('error server');
+                    }
 
                 },
                 error: function (e) {
@@ -406,4 +410,3 @@ function contentWayPoint() {
 
     }, {offset: '85%'});
 };
-
