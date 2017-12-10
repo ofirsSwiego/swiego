@@ -232,7 +232,6 @@ function scrollToElement(type) {
                 scrollTop: $(".fh5co-cta").offset().top
             }, 2000);
     }
-
     if(type === 2){
             $('html, body').animate({
                 scrollTop: $("#section1").offset().top
