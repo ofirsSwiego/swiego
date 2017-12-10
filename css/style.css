@@ -672,9 +672,6 @@ h1, h2, h3, h4, h5, h6, figure {
     padding: 5em 0;
 }
 
-#fh5co-services-section{
-    padding: 0em 0;
-}
 
 @media screen and (max-width: 768px) {
     #fh5co-services-section, #fh5co-work-section, #fh5co-testimony-section,
@@ -1010,9 +1007,9 @@ h1, h2, h3, h4, h5, h6, figure {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 20em 0;
+    padding: 13em 0;
     position: relative;
-    height: 110vh;
+    height: 68vh;
 }
 
 

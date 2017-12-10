@@ -29,46 +29,6 @@
     //     isMobile = true;
     // }
 
-    if(!isMobile.any()){
-        $('#fullpage').fullpage({
-            lockAnchors: false,
-            scrollingSpeed: 1250,
-            css3: true,
-            keyboardScrolling: true,
-            autoScrolling: true,
-            fitToSection: true,
-            loopBottom: false,
-            loopTop: false,
-            loopHorizontal: true,
-            continuousVertical: false,
-            continuousHorizontal: false,
-            scrollHorizontally: false,
-            interlockedSlides: false,
-            dragAndMove: false,
-            offsetSections: false,
-            resetSliders: false,
-            fadingEffect: false,
-            scrollOverflow: false,
-            scrollOverflowReset: false,
-            scrollOverflowOptions: null,
-            touchSensitivity: 15,
-            normalScrollElementTouchThreshold: 5,
-            bigSectionsDestination: null,
-            navigation: false,
-            navigationPosition: 'right',
-            slidesNavPosition: 'bottom',
-            afterLoad: function(anchorLink, index){
-                contentWayPoint();
-            },
-        });
-    }else {
-        $('#fullpage').fullpage({
-            autoScrolling: false,
-        });
-    }
-
-
-
     var fullHeight = function () {
         if (!isMobile.any()) {
             $('.js-fullheight').css('height', $(window).height());
@@ -205,6 +165,39 @@
         });
     };
 
+
+    var contentWayPoint = function () {
+        var i = 0;
+        $('.animate-box').waypoint(function (direction) {
+
+            if (direction === 'down' && !$(this.element).hasClass('animated')) {
+                i++;
+                $(this.element).addClass('item-animate');
+                setTimeout(function () {
+                    $('body .animate-box.item-animate').each(function (k) {
+                        var el = $(this);
+                        setTimeout(function () {
+                            var effect = el.data('animate-effect');
+                            if (effect === 'fadeIn') {
+                                el.addClass('fadeIn animated');
+                            } else if (effect === 'fadeInLeft') {
+                                el.addClass('fadeInLeft animated');
+                            } else if (effect === 'fadeInRight') {
+                                el.addClass('fadeInRight animated');
+                            } else {
+                                el.addClass('fadeInUp animated');
+                            }
+
+                            el.removeClass('item-animate');
+                        }, k * 200, 'easeInOutExpo');
+                    });
+
+                }, 100);
+            }
+
+        }, {offset: '85%'});
+    };
+
     $(function () {
         fullHeight();
         sliderMain();
@@ -234,12 +227,16 @@
 
 
 function scrollToElement(type) {
-    if(type == 1){
-        $.fn.fullpage.moveTo(3);
+    if(type === 1){
+            $('html, body').animate({
+                scrollTop: $(".fh5co-cta").offset().top
+            }, 2000);
     }
 
-    if(type == 2){
-        $.fn.fullpage.moveTo(2);
+    if(type === 2){
+            $('html, body').animate({
+                scrollTop: $("#section1").offset().top
+            }, 1000);
     }
 }
 
@@ -379,34 +376,3 @@ function sendContact(ev) {
 }
 
 
-function contentWayPoint() {
-    var i = 0;
-    $('.animate-box').waypoint(function (direction) {
-
-        if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            i++;
-            $(this.element).addClass('item-animate');
-            setTimeout(function () {
-                $('body .animate-box.item-animate').each(function (k) {
-                    var el = $(this);
-                    setTimeout(function () {
-                        var effect = el.data('animate-effect');
-                        if (effect === 'fadeIn') {
-                            el.addClass('fadeIn animated');
-                        } else if (effect === 'fadeInLeft') {
-                            el.addClass('fadeInLeft animated');
-                        } else if (effect === 'fadeInRight') {
-                            el.addClass('fadeInRight animated');
-                        } else {
-                            el.addClass('fadeInUp animated');
-                        }
-
-                        el.removeClass('item-animate');
-                    }, k * 200, 'easeInOutExpo');
-                });
-
-            }, 100);
-        }
-
-    }, {offset: '85%'});
-};
