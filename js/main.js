@@ -352,14 +352,14 @@ function sendContact(ev) {
 
                 },
                 success: function (data) {
-                        if(data.result.status == 103){
-                            window.setTimeout(function () {
-                                elem.classList.remove(pendingClassName);
-                                elem.classList.add(successClassName);
-                            }, stateDuration);
-                        }else {
-                            console.log('error server');
-                        }
+                    if(data.result.status == 103){
+                        window.setTimeout(function () {
+                            elem.classList.remove(pendingClassName);
+                            elem.classList.add(successClassName);
+                        }, stateDuration);
+                    }else {
+                        console.log('error server');
+                    }
 
                 },
                 error: function (e) {
@@ -410,4 +410,3 @@ function contentWayPoint() {
 
     }, {offset: '85%'});
 };
-
