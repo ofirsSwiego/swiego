@@ -1018,6 +1018,16 @@ h1, h2, h3, h4, h5, h6, figure {
     .fh5co-cta {
         padding: 3em 0;
     }
+
+    #fh5co-offcanvas{
+        width: 295px !important;
+    }
+
+    span.icon-envelope-o, .icon-phone{
+        line-height: 1.5 !important;
+        float: left;
+        margin-right: 7px;
+    }
 }
 
 .fh5co-cta .overlay {
