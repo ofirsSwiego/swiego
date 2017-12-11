@@ -222,6 +222,36 @@
             else
                 $("#submit").prop('disabled', true);
         });
+
+
+        $(".target").change(function() {
+
+            var val = $(this).val();
+            if(val !== 0){
+                if(val == 1){
+                    if (window.location.href.indexOf('il') > -1)
+                    {
+                        location.replace("http://localhost:8080/flew");
+                    }
+                }
+
+                if(val == 2){
+                    if (!window.location.href.indexOf('il') > -1)
+                    {
+                        console.log(1111);
+                        location.replace("http://localhost:8080/flew/il");
+                    }
+                }
+            }
+
+
+            console.log(val);
+            // else {
+            //     console.log($('#slct option:selected').val());
+            // }
+        });
+
+
     }
 }());
 
