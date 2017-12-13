@@ -1028,7 +1028,21 @@ h1, h2, h3, h4, h5, h6, figure {
         float: left;
         margin-right: 7px;
     }
+
+    .select {
+        right: 5px !important;
+        left: 0px;
+        width: 100% !important;
+    }
+
+    ul#menu {
+        margin-top: 30px !important;
+    }
+
+
+
 }
+
 
 .fh5co-cta .overlay {
     background: rgba(0, 0, 0, 0.7);
@@ -1181,6 +1195,13 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
     #fh5co-offcanvas {
         display: block;
+    }
+    .form-group {
+        margin-bottom: 33px;
+    }
+
+    .fh5co-cta {
+        height: 90vh;
     }
 }
 
@@ -2419,7 +2440,7 @@ select::-ms-expand {
 }
 /* Transition */
 .select:hover::after {
-    color: #f39c12;
+    color: #27e1ce;
 }
 .select::after {
     -webkit-transition: .25s all ease;

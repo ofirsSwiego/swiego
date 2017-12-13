@@ -87,7 +87,7 @@
 
         $(document).click(function (e) {
             var container = $("#fh5co-offcanvas, .js-fh5co-nav-toggle");
-            if (!container.is(e.target) && container.has(e.target).length === 0) {
+            if (container.is(e.target) && container.has(e.target).length === 0) {
                 if ($('body').hasClass('offcanvas-visible')) {
                     $('body').removeClass('offcanvas-visible');
                     $('.js-fh5co-nav-toggle').removeClass('active');
@@ -97,7 +97,6 @@
     };
 
     var offcanvasMenu = function () {
-
         $('body').prepend('<div id="fh5co-offcanvas" />');
         $('#fh5co-offcanvas').prepend('<ul id="fh5co-side-links">');
         $('body').prepend('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>');
@@ -105,6 +104,7 @@
     };
 
     var burgerMenu = function () {
+
         $('body').on('click', '.js-fh5co-nav-toggle', function (event) {
             var $this = $(this);
             $('body').toggleClass('fh5co-overflow offcanvas-visible');
@@ -128,7 +128,6 @@
     };
 
     var toggleBtnColor = function () {
-
         if ($('#fh5co-hero').length > 0) {
             $('#fh5co-hero').waypoint(function (direction) {
                 if (direction === 'down') {
@@ -222,36 +221,26 @@
             else
                 $("#submit").prop('disabled', true);
         });
-
-
         $(".target").change(function() {
-
             var val = $(this).val();
             if(val !== 0){
                 if(val == 1){
                     if (window.location.href.indexOf('il') > -1)
                     {
                         location.replace("http://localhost:8080/flew");
+                        //location.replace("https://swiego.com");
                     }
                 }
 
                 if(val == 2){
                     if (!window.location.href.indexOf('il') > -1)
                     {
-                        console.log(1111);
                         location.replace("http://localhost:8080/flew/il");
+                        //location.replace("https://swiego.com/il");
                     }
                 }
             }
-
-
-            console.log(val);
-            // else {
-            //     console.log($('#slct option:selected').val());
-            // }
         });
-
-
     }
 }());
 
@@ -281,18 +270,27 @@ function sendContact(ev) {
     var failBtnElement = document.querySelector('.js_fail-animation-trigger');
 
     var pendingClassName = 'loading-btn--pending';
+
     var successClassName = 'loading-btn--success';
     var failClassName = 'loading-btn--fail';
 
     var stateDuration = 1500;
-    var elem = ev.target;
+    var elem = '';
+    if (ev.srcElement.localName == 'span'){
+         elem = $(ev.target).parent();
+         elem = elem[0];
+    }else {
+         elem = ev.target;
+    }
 
+
+    elem.classList.add(pendingClassName);
     var obj = {};
     var validateEmail = false;
     var validateName = false;
     var validatePhone = false;
     var send = false;
-    elem.classList.add(pendingClassName);
+
     var inputs = $('.form-inline :input').map(function () {
         var key = $(this).context.id;
         var value = $(this).val();
@@ -311,7 +309,13 @@ function sendContact(ev) {
                             return elem.classList.remove(failClassName);
                         }, stateDuration);
                     }, stateDuration);
-                    $('#errorEmail').html('Invalid email');
+
+                    if (window.location.href.indexOf('il') > -1)
+                    {
+                        $('#errorEmail').html('מייל לא חוקי');
+                    }else{
+                        $('#errorEmail').html('Invalid email');
+                    }
                 }
             } else {
                 window.setTimeout(function () {
@@ -321,7 +325,13 @@ function sendContact(ev) {
                         return elem.classList.remove(failClassName);
                     }, stateDuration);
                 }, stateDuration);
-                $('#errorEmail').html('This field is required');
+                if (window.location.href.indexOf('il') > -1)
+                {
+                    $('#errorEmail').html('שדה זה חובה');
+                }else{
+                    $('#errorEmail').html('This field is required');
+                }
+
             }
         }
         if (key == 'name') {
@@ -337,7 +347,13 @@ function sendContact(ev) {
                         return elem.classList.remove(failClassName);
                     }, stateDuration);
                 }, stateDuration);
-                $('#errorName').html('This field is required');
+
+                if (window.location.href.indexOf('il') > -1)
+                {
+                    $('#errorName').html('שדה זה חובה');
+                }else{
+                    $('#errorName').html('This field is required');
+                }
             }
         }
         if (key == 'phone') {
@@ -354,7 +370,12 @@ function sendContact(ev) {
                             return elem.classList.remove(failClassName);
                         }, stateDuration);
                     }, stateDuration);
-                    $('#errorPhone').html('The phone number must be at least 9 digits');
+                    if (window.location.href.indexOf('il') > -1)
+                    {
+                        $('#errorPhone').html('מספר הטלפון חייב להיות 9 ספרות לפחות');
+                    }else{
+                        $('#errorPhone').html('The phone number must be at least 9 digits');
+                    }
                 }
             } else {
                 window.setTimeout(function () {
@@ -364,7 +385,12 @@ function sendContact(ev) {
                         return elem.classList.remove(failClassName);
                     }, stateDuration);
                 }, stateDuration);
-                $('#errorPhone').html('This field is required');
+                if (window.location.href.indexOf('il') > -1)
+                {
+                    $('#errorPhone').html('שדה זה חובה');
+                }else{
+                    $('#errorPhone').html('This field is required');
+                }
             }
         }
         if (validateEmail && validateName && validatePhone && !send) {
