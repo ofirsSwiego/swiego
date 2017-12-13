@@ -227,16 +227,16 @@
                 if(val == 1){
                     if (window.location.href.indexOf('il') > -1)
                     {
-                        location.replace("http://localhost:8080/flew");
-                        //location.replace("https://swiego.com");
+                        //location.replace("http://localhost:8080/flew");
+                        location.replace("https://swiego.com");
                     }
                 }
 
                 if(val == 2){
                     if (!window.location.href.indexOf('il') > -1)
                     {
-                        location.replace("http://localhost:8080/flew/il");
-                        //location.replace("https://swiego.com/il");
+                        //location.replace("http://localhost:8080/flew/il");
+                        location.replace("https://swiego.com/il");
                     }
                 }
             }
