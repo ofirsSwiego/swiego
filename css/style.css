@@ -337,11 +337,7 @@ h1, h2, h3, h4, h5, h6, figure {
     padding-bottom: 7em;
 }
 
-@media screen and (max-width: 768px) {
-    .row-bottom-padded-lg {
-        padding-bottom: 1em;
-    }
-}
+
 
 .row-bottom-padded-md {
     padding-bottom: 4em;
@@ -1898,9 +1894,9 @@ button {
 }
 
 svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 10%;
+    height: 10%;
 }
 
 .text-copy {
@@ -2446,4 +2442,48 @@ select::-ms-expand {
     -webkit-transition: .25s all ease;
     -o-transition: .25s all ease;
     transition: .25s all ease;
+}
+
+.fh5co-tech {
+    background-color: #262626;
+    border-bottom: 1px solid;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.fh5co-tech h2 {
+    color: #7f7f7f;
+}
+
+i{
+    font-size: 200%;
+}
+
+.fh5co-tech ul li {
+    list-style: none;
+}
+
+.fixed {
+    float: right;
+    padding: 20px;
+    width: 25%;
+    height: 10vh;
+}
+
+.container-tech {
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .row-bottom-padded-lg {
+        padding-bottom: 1em;
+    }
+
+    .fixed {
+        float: right;
+        padding: 20px;
+        width: 31%;
+    }
 }
