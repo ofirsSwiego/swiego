@@ -2483,8 +2483,10 @@ select::-ms-expand {
 
     .fixed {
         float: right;
-        padding: 20px;
-        width: 31%;
+        width: 32%;
+    }
+    .fh5co-tech ul li {
+        width: 80%;
     }
 }
 
