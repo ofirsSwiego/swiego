@@ -2484,6 +2484,7 @@ select::-ms-expand {
     .fixed {
         float: right;
         width: 32%;
+        height: 13vh;
     }
     .fh5co-tech ul li {
         width: 80%;
