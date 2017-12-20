@@ -17,7 +17,9 @@
             success: function(json)
             {
                 if(json.country_code == 'IL'){
+                    console.log(window.location.href.indexOf('il'));
                     if (!window.location.href.indexOf('il') > -1) {
+                        console.log(1111);
                          window.location = 'https://swiego.com/il';
                     }
                 }
