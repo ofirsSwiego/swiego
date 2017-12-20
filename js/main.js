@@ -23,7 +23,18 @@
             },
 
         });
+    }else {
+        if(lang == 'il'){
+            if(window.location.href.indexOf('il') > -1){
+
+            }else{
+                window.location = 'https://swiego.com/il';
+            }
+        }
     }
+
+
+    console.log();
 
 
     var isMobile = false;
