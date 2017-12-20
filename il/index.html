@@ -8,6 +8,18 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
+    <?php
+if (!(isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' ||
+   $_SERVER['HTTPS'] == 1) ||
+   isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+   $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https'))
+{
+   $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+   header('HTTP/1.1 301 Moved Permanently');
+   header('Location: ' . $redirect);
+   exit();
+}
+?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SWIEGO מיקור חוץ ופיתוח תוכנה</title>
@@ -106,6 +118,7 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+
 </head>
 <body lang="he">
 <div class="se-pre-con"></div>
