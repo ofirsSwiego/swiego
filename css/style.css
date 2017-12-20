@@ -2472,10 +2472,6 @@ select::-ms-expand {
     height: 10vh;
 }
 
-.container-tech {
-    display: inline-block;
-}
-
 @media screen and (max-width: 768px) {
     .row-bottom-padded-lg {
         padding-bottom: 1em;
@@ -2491,3 +2487,19 @@ select::-ms-expand {
     }
 }
 
+.fh5co-tech .row{
+    margin: 0 auto;
+}
+
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/Preloader_8.gif) center no-repeat #fff;
+}

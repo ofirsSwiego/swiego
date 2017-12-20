@@ -1,5 +1,35 @@
 ;(function () {
     'use strict';
+
+//paste this code under the head tag or in a separate js file.
+    // Wait for window load
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");;
+    });
+
+    var requestUrl = "http://ip-api.com/json";
+    var lang = localStorage.getItem('swiegoLang');
+    console.log(lang);
+    if(!lang){
+        $.ajax({
+            url: requestUrl,
+            type: 'GET',
+            success: function(json)
+            {
+                if(json.country == 'Israel'){
+                    //window.location = 'https://swiego.com/il';
+                }
+                console.log("My country is: " + json.country);
+            },
+            error: function(err)
+            {
+                console.log("Request failed, error= " + err);
+            }
+        });
+    }
+
+
     var isMobile = false;
     isMobile = {
         Android: function () {
@@ -224,6 +254,7 @@
                 if(val == 1){
                     if (window.location.href.indexOf('il') > -1)
                     {
+                        localStorage.setItem('swiegoLang', JSON.stringify('en'));
                         //location.replace("http://localhost:8080/flew");
                         location.replace("https://swiego.com");
                     }
@@ -232,6 +263,7 @@
                 if(val == 2){
                     if (!window.location.href.indexOf('il') > -1)
                     {
+                        localStorage.setItem('swiegoLang', JSON.stringify('il'));
                         //location.replace("http://localhost:8080/flew/il");
                         location.replace("https://swiego.com/il");
                     }
