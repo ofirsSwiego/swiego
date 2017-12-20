@@ -15,6 +15,9 @@
         $.ajax({
             url: requestUrl,
             type: 'GET',
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            },
             success: function(json)
             {
                 if(json.country == 'Israel'){
