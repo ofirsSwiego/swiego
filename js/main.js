@@ -25,6 +25,7 @@
         });
     }else{
         if(lang == 'il') {
+            console.log(1111);
             if (!window.location.href.indexOf('il') > -1)
                 window.location = 'https://swiego.com/il';
         }else {
