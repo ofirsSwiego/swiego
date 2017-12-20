@@ -23,6 +23,12 @@
             },
 
         });
+    }else{
+        if(lang == 'il'){
+            window.location = 'https://swiego.com/il';
+        }else {
+            window.location = 'https://swiego.com';
+        }
     }
 
 
