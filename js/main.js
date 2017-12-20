@@ -5,10 +5,9 @@
     // Wait for window load
     $(window).load(function() {
         // Animate loader off screen
-        $(".se-pre-con").fadeOut("slow");;
+        //$(".se-pre-con").fadeOut("slow");;
     });
 
-    var requestUrl = "https://freegeoip.net/json/?callback=?";
     var lang = localStorage.getItem('swiegoLang');
     if(!lang){
         $.ajax({
@@ -17,13 +16,11 @@
 
             success: function(json)
             {
-                console.log(json);
                 if(json.country_code == 'IL'){
-                    window.location = 'https://swiego.com/il';
-                }else {
-                   window.location = 'https://swiego.com';
+                    if (!window.location.href.indexOf('il') > -1) {
+                         window.location = 'https://swiego.com/il';
+                    }
                 }
-                //console.log("My country is: " + json.country);
             },
 
         });
