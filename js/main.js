@@ -18,7 +18,9 @@
             success: function(json)
             {
                 if(json.country == 'Israel'){
-                    //window.location = 'https://swiego.com/il';
+                    window.location = 'https://swiego.com/il';
+                }else {
+                    window.location = 'https://swiego.com';
                 }
                 console.log("My country is: " + json.country);
             },
