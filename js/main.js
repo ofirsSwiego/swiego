@@ -8,29 +8,24 @@
         $(".se-pre-con").fadeOut("slow");;
     });
 
-    var requestUrl = "http://ip-api.com/json";
+    var requestUrl = "https://freegeoip.net/json/?callback=?";
     var lang = localStorage.getItem('swiegoLang');
-    console.log(lang);
     if(!lang){
         $.ajax({
-            url: requestUrl,
+            url: 'https://freegeoip.net/json/?callback',
             type: 'GET',
-            headers: {
-                'Access-Control-Allow-Origin': '*'
-            },
+
             success: function(json)
             {
-                if(json.country == 'Israel'){
+                console.log(json);
+                if(json.country_code == 'IL'){
                     window.location = 'https://swiego.com/il';
                 }else {
-                    window.location = 'https://swiego.com';
+                   window.location = 'https://swiego.com';
                 }
-                console.log("My country is: " + json.country);
+                //console.log("My country is: " + json.country);
             },
-            error: function(err)
-            {
-                console.log("Request failed, error= " + err);
-            }
+
         });
     }
 
