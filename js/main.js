@@ -24,10 +24,12 @@
 
         });
     }else{
-        if(lang == 'il'){
-            window.location = 'https://swiego.com/il';
+        if(lang == 'il') {
+            if (!window.location.href.indexOf('il') > -1)
+                window.location = 'https://swiego.com/il';
         }else {
-            window.location = 'https://swiego.com';
+            if (!window.location.href.indexOf('il') > -1)
+                window.location = 'https://swiego.com';
         }
     }
 
