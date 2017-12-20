@@ -8,7 +8,7 @@
         $(".se-pre-con").fadeOut("slow");;
     });
 
-    var requestUrl = "//ip-api.com/json";
+    var requestUrl = "http://ip-api.com/json";
     var lang = localStorage.getItem('swiegoLang');
     console.log(lang);
     if(!lang){
