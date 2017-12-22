@@ -8,33 +8,61 @@
         $(".se-pre-con").fadeOut("slow");;
     });
 
-    var lang = localStorage.getItem('swiegoLang');
-    if(!lang){
-        $.ajax({
-            url: 'https://freegeoip.net/json/?callback',
-            type: 'GET',
+        // var lang = localStorage.getItem('swiegoLang');
+        // if (!lang) {
+        //     $.ajax({
+        //         url: 'https://freegeoip.net/json/?callback',
+        //         type: 'GET',
+        //
+        //         success: function (json) {
+        //             if (json.country_code == 'IL') {
+        //                 localStorage.setItem('swiegoLang', JSON.stringify('il'));
+        //                 window.location = 'https://swiego.com/il';
+        //             }
+        //         },
+        //
+        //     });
+        // } else {
+        //     if (lang === '"il"') {
+        //         if (window.location.href.indexOf('il') > -1) {
+        //         } else {
+        //             window.location = 'https://swiego.com/il';
+        //         }
+        //     }
+        // }
 
-            success: function(json)
-            {
-                if(json.country_code == 'IL'){
-                    localStorage.setItem('swiegoLang', JSON.stringify('il'));
-                         window.location = 'https://swiego.com/il';
-                }
-            },
 
-        });
-    }else {
-        if(lang === '"il"'){
-            if(window.location.href.indexOf('il') > -1){
-            }else{
-                window.location = 'https://swiego.com/il';
+    var jssor_1_slider_init = function() {
+        var jssor_1_options = {
+            $AutoPlay: 1,
+            $Idle: 0,
+            $SlideDuration: 5000,
+            $SlideEasing: $Jease$.$Linear,
+            $PauseOnHover: 4,
+            $SlideWidth: 140,
+            $Cols: 7
+        };
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = screen.width;
+        function ScaleSlider() {
+            var containerElement = jssor_1_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+            if (containerWidth) {
+                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+                jssor_1_slider.$ScaleWidth(expectedWidth);
+            }
+            else {
+                window.setTimeout(ScaleSlider, 30);
             }
         }
-    }
-
-
-    console.log();
-
+        ScaleSlider();
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    };
 
     var isMobile = false;
     isMobile = {
@@ -242,6 +270,7 @@
         contentWayPoint();
         testimonialCarousel();
         watchScript();
+        jssor_1_slider_init();
     });
 
     function watchScript() {

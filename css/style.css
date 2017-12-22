@@ -2444,53 +2444,37 @@ select::-ms-expand {
     transition: .25s all ease;
 }
 
-.fh5co-tech {
-    background-color: #262626;
-    border-bottom: 1px solid;
+#jssor_1 i{
+    font-size: 150%;
+}
+
+.tech-icon {
     text-align: center;
-    padding-top: 40px;
-    position: relative;
-    padding-bottom: 40px;
+    margin: 0 auto;
+    background: #262626;
 }
 
-.fh5co-tech h2 {
-    color: #7f7f7f;
-}
 
-.fh5co-tech i{
-    font-size: 200%;
-}
 
-.fh5co-tech ul li {
-    list-style: none;
-}
-
-.fixed {
-    float: right;
-    padding: 20px;
-    width: 25%;
-    height: 10vh;
+div#jssor_1 {
+    background: #262626;
 }
 
 @media screen and (max-width: 768px) {
     .row-bottom-padded-lg {
         padding-bottom: 1em;
     }
-
-    .fixed {
-        float: right;
-        width: 32%;
-        height: 13vh;
+    div#jssor_1 {
+        padding: 20px;
     }
-    .fh5co-tech ul li {
-        width: 80%;
+    .tech-title{
+        font-size:25px
+    }
+
+    #jssor_1 i{
+        font-size: 300%;
     }
 }
-
-.fh5co-tech .row{
-    margin: 0 auto;
-}
-
 
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -2502,4 +2486,19 @@ select::-ms-expand {
     height: 100%;
     z-index: 9999;
     background: url(../images/Preloader_8.gif) center no-repeat #fff;
+}
+
+.jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes jssorl-009-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
