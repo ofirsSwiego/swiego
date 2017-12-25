@@ -457,10 +457,14 @@ function sendContact(ev) {
             }
         }
         if (validateEmail && validateName && validatePhone && !send) {
+            var url = 'server/index.php';
+            if (window.location.href.indexOf('il') > -1){
+                url = '../server/index.php';
+            }
             send = true;
             $.ajax({
                 type: 'POST',
-                url: 'server/index.php',
+                url: url,
                 data: {action: 'sendData', data: JSON.stringify(obj)},
                 dataType: 'json',
                 beforeSend: function () {
