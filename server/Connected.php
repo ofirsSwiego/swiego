@@ -6,7 +6,7 @@ class ConnectToDb
 {
     public static function connect()
     {
-        $link = mysqli_connect("localhost", "root", "dd429glkk", "swiego");
+        $link = mysqli_connect("localhost", "root", "dd429glk", "swiego");
         if ($link === false) {
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
