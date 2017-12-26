@@ -2377,6 +2377,10 @@ button[disabled], html input[disabled] {
     font-size: 5rem;
 }
 
+.header h2 {
+    color: #b8babc;
+}
+
 .header-canvas {
     position: absolute;
     z-index: 1;
