@@ -8,27 +8,27 @@
         $(".se-pre-con").fadeOut("slow");;
     });
 
-        var lang = localStorage.getItem('swiegoLang');
-        if (!lang) {
-            $.ajax({
-                url: 'https://freegeoip.net/json/?callback',
-                type: 'GET',
-
-                success: function (json) {
-                    if (json.country_code == 'IL') {
-                        localStorage.setItem('swiegoLang', JSON.stringify('il'));
-                        window.location = 'https://swiego.com/il';
-                    }
-                },
-            });
-        } else {
-            if (lang === '"il"') {
-                if (window.location.href.indexOf('il') > -1) {
-                } else {
-                    window.location = 'https://swiego.com/il';
-                }
-            }
-        }
+        // var lang = localStorage.getItem('swiegoLang');
+        // if (!lang) {
+        //     $.ajax({
+        //         url: 'https://freegeoip.net/json/?callback',
+        //         type: 'GET',
+        //
+        //         success: function (json) {
+        //             if (json.country_code == 'IL') {
+        //                 localStorage.setItem('swiegoLang', JSON.stringify('il'));
+        //                 window.location = 'https://swiego.com/il';
+        //             }
+        //         },
+        //     });
+        // } else {
+        //     if (lang === '"il"') {
+        //         if (window.location.href.indexOf('il') > -1) {
+        //         } else {
+        //             window.location = 'https://swiego.com/il';
+        //         }
+        //     }
+        // }
 
 
     var jssor_1_slider_init = function() {
@@ -85,9 +85,7 @@
         }
     };
 
-    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    //     isMobile = true;
-    // }
+
 
     var fullHeight = function () {
         if (!isMobile.any()) {
